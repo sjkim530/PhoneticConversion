@@ -1,0 +1,3 @@
+function phoneticConversion(array) {
+  return;
+}
