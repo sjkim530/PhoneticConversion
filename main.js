@@ -1,3 +1,5 @@
+const array = process.argv.slice(2);
+
 function phoneticConversion(array) {
   const bank = {
     0: "Zero",
@@ -14,18 +16,17 @@ function phoneticConversion(array) {
   };
 
   array = array.map((element) => {
-    const elementString = String(element);
     let phonetic = "";
 
-    for (let i = 0; i < elementString.length; i++) {
-      const digit = elementString[i];
+    for (let i = 0; i < element.length; i++) {
+      const digit = element[i];
 
       phonetic += bank[digit];
     }
     return phonetic;
   });
 
-  return array.join(",");
+  console.log(array.join(","));
 }
 
-phoneticConversion([3, 25, 209]);
+phoneticConversion(array);
