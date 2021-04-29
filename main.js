@@ -12,5 +12,20 @@ function phoneticConversion(array) {
     9: "Nine",
     10: "Ten",
   };
-  return;
+
+  array = array.map((element) => {
+    const elementString = String(element);
+    let phonetic = "";
+
+    for (let i = 0; i < elementString.length; i++) {
+      const digit = elementString[i];
+
+      phonetic += bank[digit];
+    }
+    return phonetic;
+  });
+
+  return array.join(",");
 }
+
+phoneticConversion([3, 25, 209]);
